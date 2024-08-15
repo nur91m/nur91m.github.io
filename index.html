@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренировка таблицы умножения</title>
+    <style>
+        #stats {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="stats">
+        <p id="totalTasks">Всего задач: 0</p>
+        <p id="correctAnswers">Правильных: 0</p>
+        <p id="incorrectAnswers">Неправильных: 0</p>
+    </div>
+    <h1>Тренировка таблицы умножения</h1>
+    <div id="task-container">
+        <p id="task"></p>
+        <input type="number" id="answer" placeholder="Ваш ответ">
+        <button onclick="checkAnswer()">Проверить</button>
+    </div>
+    <p id="feedback"></p>
+    <button id="nextTaskButton" onclick="nextTask()" style="display:none;">Следующее задание</button>
+    <button id="restartButton" onclick="restartTraining()" style="display:none;">Начать заново</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
