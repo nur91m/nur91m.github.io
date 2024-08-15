@@ -96,7 +96,7 @@ function restartTraining() {
 }
 
 function handleKeyDown(event) {
-    if (event.key === 'Enter') {
+    if (event.keyCode===13) {
         checkAnswer();
     }
 }
