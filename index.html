@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Тренировка таблицы умножения</title>
     <style>
-        #stats {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            text-align: right;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+      #stats {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: right;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      #task {
+        font-size: 32px;
+        text-align: center;
+      }
+      #inputWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #inputWrap > button {
+        font-size: large;
+        height: 50px;
+      }
+      #answer {
+        width: 200px;
+        font-size: 32px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      #feedbackWrapper {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      #feedbackWrapper > button,
+      #feedbackWrapper > div {
+        width: 300px; /* Example width */
+        align-self: center;
+        text-align: center;
+      }
+
+      #nextTaskButton{
+        font-size: large;
+        height: 30px;
+        width: 200px !important;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="stats">
-        <p id="totalTasks">Всего задач: 0</p>
-        <p id="correctAnswers">Правильных: 0</p>
-        <p id="incorrectAnswers">Неправильных: 0</p>
+      <p id="totalTasks">Всего задач: 0</p>
+      <p id="correctAnswers">Правильных: 0</p>
+      <p id="incorrectAnswers">Неправильных: 0</p>
     </div>
     <h1>Тренировка таблицы умножения</h1>
     <div id="task-container">
-        <p id="task"></p>
-        <input type="number" id="answer" placeholder="Ваш ответ">
-        <button onclick="checkAnswer()">Проверить</button>
+      <p id="task"></p>
+      <div id="inputWrap">
+        <input type="number" id="answer" placeholder="Ваш ответ" />
+        <button id="checkBtn" onclick="checkAnswer()">Проверить</button>
+      </div>
     </div>
-    <p id="feedback"></p>
-    <button id="nextTaskButton" onclick="nextTask()" style="display:none;">Следующее задание</button>
-    <button id="restartButton" onclick="restartTraining()" style="display:none;">Начать заново</button>
+
+    <div id="feedbackWrapper">
+      <div id="feedback"></div>
+      <button id="nextTaskButton" onclick="nextTask()" style="display: none">
+        Следующее задание
+      </button>
+      <button
+        id="restartButton"
+        onclick="restartTraining()"
+        style="display: none"
+      >
+        Начать заново
+      </button>
+    </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

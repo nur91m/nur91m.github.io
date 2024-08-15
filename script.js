@@ -53,6 +53,8 @@ function checkAnswer() {
     if (userAnswer === task.answer) {
         stats.correctAnswers++;
         document.getElementById("feedback").textContent = "Правильно!";
+
+        document.getElementById("checkBtn").style.display = "none";
     } else {
         stats.incorrectAnswers++;
         document.getElementById("feedback").textContent = `Неправильно! Правильный ответ: ${task.answer}`;
@@ -68,6 +70,9 @@ function checkAnswer() {
 function nextTask() {
     document.getElementById("feedback").textContent = '';
     document.getElementById("nextTaskButton").style.display = "none";
+
+    document.getElementById("checkBtn").style.display = "block";
+
 
     currentTaskIndex++;
 
