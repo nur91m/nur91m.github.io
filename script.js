@@ -84,7 +84,8 @@ function nextTask() {
   document.getElementById("nextTaskButton").style.display = "none";
 
   document.getElementById("checkBtn").style.display = "block";
-
+  document.getElementById("answer").focus();
+  
   currentTaskIndex++;
 
   if (currentTaskIndex < tasks.length) {
@@ -110,6 +111,7 @@ function restartTraining() {
 
 function handleKeyDown(event) {
   if (event.keyCode === 13) {
+    if(document.getElementById("nextTaskButton").style.display === "none")
     checkAnswer();
   }
 }
