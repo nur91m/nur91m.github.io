@@ -95,8 +95,16 @@ function restartTraining() {
     location.reload()
 }
 
+function handleKeyDown(event) {
+    if (event.key === 'Enter') {
+        checkAnswer();
+    }
+}
+
 // Инициализация
 const initialStats = loadStatistics();
 updateStatisticsDisplay(initialStats);
 initializeTasks();
 displayTask(tasks[currentTaskIndex]);
+
+document.getElementById("answer").addEventListener("keydown", handleKeyDown);
